@@ -9,8 +9,9 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <div id="app">          
-            <ul>
+        <div id="app">  
+            <!-- BONUS (sfrutto v-if su ul impostando loadingComplete = true)-->
+            <ul v-if="loadingComplete == true">
                 <!-- utilizzo il ciclo v-for per creare 1 nodo per ogni valore nell'array emails[] -->
                 <li v-for="email in emails">
                     {{ email }}

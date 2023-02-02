@@ -6,7 +6,9 @@ createApp ({
         
         return {
             apiUrl: 'https://flynn.boolean.careers/exercises/api/random/mail',
-            emails: []
+            emails: [],
+            //BONUS (creo una variabile con valore false)
+            loadingComplete: false
         };
     },
 
@@ -24,6 +26,15 @@ createApp ({
 
                     //poi pusho le emails generate nell'array vuoto (creato in return)
                     this.emails.push(response.data.response);
+
+                    //BONUS (sfrutto loadingComplete con if per stabilire quando l'array è pieno o meno)
+                    if (this.emails.length == 10) {
+                        console.log('PIENO')
+                        this.loadingComplete = true;
+                    }
+                    else {
+                        console.log('NON PIENO')
+                    }
                 });
             }
         }
